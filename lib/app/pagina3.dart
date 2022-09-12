@@ -1,0 +1,383 @@
+import 'package:flutter/material.dart';
+import 'package:weeldonatedproject/app/pagina2.dart';
+
+
+class pagina3 extends StatelessWidget {
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xff3949ab),
+        elevation: 0.0,
+        leadingWidth: 25,
+        leading: Builder(builder: (BuildContext context) {
+          return IconButton(
+            alignment: Alignment.centerLeft,
+            icon: const Icon(
+              Icons.navigate_before_outlined,
+              size: 40.0,
+            ),
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => pagina2()));
+            },
+          );
+        }),
+        title: Text(
+          'Voltar',
+          textAlign: TextAlign.left,
+          style: TextStyle(
+            fontFamily: 'Segoi UI',
+            fontSize: 20,
+          ),
+        ),
+      ),
+      body: Container(
+        color: Color(0xff3949ab),
+        height: MediaQuery.of(context).size.height,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 25),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'Registar',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    wordSpacing: 4.0,
+                    letterSpacing: 2.0,
+                    fontFamily: 'Poppins',
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(
+                  height: 17.0,
+                ),
+                ElevatedButton(
+                  child: Image.asset('individual.png'),
+                  onPressed: _pessoaSingular,
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    fixedSize: Size(120, 120),
+                    shape:  CircleBorder(),
+                  ),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                Text(
+                  'Adicionar fotografia',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    color: Colors.white70,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                SizedBox(
+                  height: 40.0,
+                ),
+                TextFormField(
+                  cursorColor: Colors.white,
+                  decoration: InputDecoration(
+                    isDense: true,
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 6,
+                    ),
+                    filled: true,
+                    fillColor: Color(0xff1a237e),
+                    hintText: "Nome",
+                    hintStyle: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'Poppins',
+                      color: Colors.white70,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white70,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white70,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                  ),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontFamily: 'Poppins',
+                  ),
+                ), //NOME
+                SizedBox(
+                  height: 30.0,
+                ),
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  cursorColor: Colors.white,
+                  decoration: InputDecoration(
+                    isDense: true,
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 6,
+                    ),
+                    filled: true,
+                    fillColor: Color(0xff1a237e),
+                    hintText: "Sobrenome",
+                    hintStyle: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'Poppins',
+                      color: Colors.white70,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white70,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white70,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                  ),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontFamily: 'Poppins',
+                  ),
+                ), //SOBRENOME
+                SizedBox(
+                  height: 30.0,
+                ),
+                TextFormField(
+                  keyboardType: TextInputType.number,
+                  cursorColor: Colors.white,
+                  decoration: InputDecoration(
+                    isDense: true,
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 6,
+                    ),
+                    filled: true,
+                    fillColor: Color(0xff1a237e),
+                    hintText: "Email",
+                    hintStyle: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'Poppins',
+                      color: Colors.white70,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white70,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white70,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                  ),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontFamily: 'Poppins',
+                  ),
+                ), //EMAIL
+                SizedBox(
+                  height: 30.0,
+                ),
+                TextFormField(
+                  keyboardType: TextInputType.phone,
+                  cursorColor: Colors.white,
+                  decoration: InputDecoration(
+                    isDense: true,
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 6,
+                    ),
+                    filled: true,
+                    fillColor: Color(0xff1a237e),
+                    hintText: "Telemóvel",
+                    hintStyle: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'Poppins',
+                      color: Colors.white70,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white70,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white70,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                  ),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontFamily: 'Poppins',
+                  ),
+                ), //TELEMOVEL
+                SizedBox(
+                  height: 30.0,
+                ),
+                TextFormField(
+                  obscureText: true,
+                  cursorColor: Colors.white,
+                  decoration: InputDecoration(
+                    isDense: true,
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 6,
+                    ),
+                    filled: true,
+                    fillColor: Color(0xff1a237e),
+                    hintText: "Palavra-passe",
+                    hintStyle: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'Poppins',
+                      color: Colors.white70,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white70,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white70,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                  ),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontFamily: 'Poppins',
+                  ),
+                ), //PASS
+                SizedBox(
+                  height: 30.0,
+                ),
+                TextFormField(
+                  obscureText: true,
+                  cursorColor: Colors.white,
+                  decoration: InputDecoration(
+                    isDense: true,
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 6,
+                    ),
+                    filled: true,
+                    fillColor: Color(0xff1a237e),
+                    hintText: "Confirmar Palavra-passe",
+                    hintStyle: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'Poppins',
+                      color: Colors.white70,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white70,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white70,
+                        width: 1.3,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    ),
+                  ),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontFamily: 'Poppins',
+                  ),
+                ), //PASS
+                SizedBox(
+                  height: 30.0,
+                ),
+                Text(
+                  'Ao clicar em Registar, está a concordar com os Termos do Serviço e com a Política de Privacidade da Well Donated',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    wordSpacing: 1.0,
+                    letterSpacing: 0.5,
+                    fontFamily: 'Poppins',
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white70,
+                  ),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                ElevatedButton(
+                  onPressed: _registar,
+                  child: Text(
+                    'Registar',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontFamily: 'Poppins',
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xffef6C00),
+                    fixedSize: Size(200, 50),
+                  ),
+                ),
+                SizedBox(
+                  height: 30.0,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+void _paginaAnterior() {
+  //
+}
+
+void _pessoaSingular() {
+  //
+}
+
+void _registar() {
+  //
+}
