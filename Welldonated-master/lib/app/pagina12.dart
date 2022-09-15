@@ -20,7 +20,6 @@ class pagina12 extends StatelessWidget {
           TextButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => pagina17()));
-
             },
             child: Text(
               'Editar Perfil',
@@ -44,7 +43,7 @@ class pagina12 extends StatelessWidget {
           TextButton(
             onPressed: null,
             child: Text(
-              'blankkkkk',
+              'blankkkkkkk',
               style: TextStyle(
                 color: Color(0xff1a237e),
               ),
