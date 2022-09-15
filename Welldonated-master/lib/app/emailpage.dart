@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weeldonatedproject/app/backgound.dart';
 import 'package:weeldonatedproject/app/emailpageform.dart';
+import 'package:weeldonatedproject/app/mainpage.dart';
 import 'package:weeldonatedproject/app/pagina2.dart';
 
 class EmailPage extends StatelessWidget {
@@ -32,7 +33,9 @@ class EmailPage extends StatelessWidget {
                         fontSize: 20,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
+                    },
                   ),
                 ),
                 SizedBox(

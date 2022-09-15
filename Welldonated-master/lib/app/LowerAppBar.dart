@@ -32,7 +32,7 @@ class _LowerappbarState extends State<Lowerappbar> {
         children: [
           
           IconButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => EmailPage()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
 
           },
               icon: Icon(Icons.home,
