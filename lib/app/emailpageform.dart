@@ -1,18 +1,21 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:weeldonatedproject/app/emailValidator.dart';
+import 'package:weeldonatedproject/app/mainpage.dart';
 
 import '../costumwidgets/butaosubmit.dart';
 
 enum EmailPageFormType { signIn, register }
 
 class EmailPageForm extends StatefulWidget with EmailandPasswordValidator {
+
   @override
   _EmailPageFormState createState() => _EmailPageFormState();
 }
 
 class _EmailPageFormState extends State<EmailPageForm> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  TextEditingController _emailController = TextEditingController ( ) ;
+  TextEditingController _passwordController = TextEditingController ( ) ;
   final FocusNode _emailFocusNode = FocusNode();
   final FocusNode _passwordFocusNode = FocusNode();
 
@@ -28,11 +31,22 @@ class _EmailPageFormState extends State<EmailPageForm> {
     FocusScope.of(context).requestFocus(_passwordFocusNode);
   }
 
-  void _submit() {
-    _submited = true;
-    print(
-        'email ${_emailController.text}, password ${_passwordController.text}');
+  static Future<User> loginUsingEmailPawword({String email, String password, BuildContext context}) async{
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User user;
+    try{
+      UserCredential userCredential = await auth.signInWithEmailAndPassword(email: email, password: password);
+      user =userCredential.user;
+
+    } on FirebaseException catch(e){
+      if(e.code == "user-not-found"){
+        print("Nenhum utilizador com essas cardenciáis");
+      }
+    }
+
+    return user;
   }
+
 
 
   void _toggleFormType() {
@@ -59,6 +73,9 @@ class _EmailPageFormState extends State<EmailPageForm> {
 
     bool emailValid = _submited && !widget.emailValidator.isValid(_email);
     bool passwordValid = _submited && !widget.emailValidator.isValid(_email);
+
+
+
 
     return [
       Text(
@@ -112,7 +129,7 @@ class _EmailPageFormState extends State<EmailPageForm> {
         obscureText: true,
         textInputAction: TextInputAction.done,
         onChanged: (password) => _updateState(),
-        onEditingComplete: _submit,
+        //onEditingComplete: _submit,
       ),
       SizedBox(
         height: 1,
@@ -130,7 +147,13 @@ class _EmailPageFormState extends State<EmailPageForm> {
       ),
       ButaoSubmit(
         text: primaryText,
-        onPressed: (){},
+        onPressed: () async{
+          User user = await loginUsingEmailPawword(email: _emailController.text, password: _passwordController.text, context: context);
+          print(user);
+          if(user != null){
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context)=> MainPage()));
+        }
+        },
         //submitEnabel ? _submit : null,
       ),
       SizedBox(

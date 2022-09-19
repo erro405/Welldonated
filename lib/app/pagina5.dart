@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weeldonatedproject/app/mainpage.dart';
 import 'package:weeldonatedproject/app/pagina4.dart';
 
 class pagina5 extends StatefulWidget {
@@ -85,7 +86,7 @@ class RegistarInst extends State<pagina5> {
                         height: 48.0,
                       ),
                       Container(
-                        width: 400,
+                        width: 350,
                         height: 40,
                         decoration: BoxDecoration(
                           border: Border.all(
@@ -129,33 +130,36 @@ class RegistarInst extends State<pagina5> {
                       SizedBox(
                         height: 28.0,
                       ),
-                      TextFormField(
-                        cursorColor: Colors.white,
-                        textAlignVertical: TextAlignVertical.top,
-                        textAlign: TextAlign.left,
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(vertical: 50, horizontal: 6,),
-                          filled: true,
-                          fillColor: Color(0xff1a237e),
-                          hintText: "Descrição (Opcional)",
-                          hintStyle: TextStyle(
+                      Card(
+                        child: TextFormField(
+                          maxLines: 5,
+                          cursorColor: Colors.white,
+                          textAlignVertical: TextAlignVertical.top,
+                          textAlign: TextAlign.left,
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 5,),
+                            filled: true,
+                            fillColor: Color(0xff1a237e),
+                            hintText: "Descrição (Opcional)",
+                            hintStyle: TextStyle(
+                              fontSize: 20.0,
+                              fontFamily: 'Poppins',
+                              color: Colors.white70,
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white70, width: 1.3,),
+                              borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                            ),
+                            focusedBorder:OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white70, width: 1.3,),
+                              borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                            ),
+                          ),
+                          style: TextStyle(
+                            color: Colors.white,
                             fontSize: 20.0,
                             fontFamily: 'Poppins',
-                            color: Colors.white70,
                           ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white70, width: 1.3,),
-                            borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                          ),
-                          focusedBorder:OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white70, width: 1.3,),
-                            borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                          ),
-                        ),
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.0,
-                          fontFamily: 'Poppins',
                         ),
                       ),
                       SizedBox(
@@ -241,7 +245,9 @@ class RegistarInst extends State<pagina5> {
                         height: 38.0,
                       ),
                       ElevatedButton(
-                        onPressed: _registar,
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
+                        },
                         child: Text(
                           'Registar',
                           style: TextStyle(
@@ -264,9 +270,5 @@ class RegistarInst extends State<pagina5> {
       ),
     );
   }
-}
-
-void _registar() {
-  //
 }
 

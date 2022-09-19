@@ -64,7 +64,7 @@ class pagina4 extends StatelessWidget {
                 ),
                 ElevatedButton(
                   child: Image.asset('individual.png'),
-                  onPressed: _pessoaSingular,
+                  onPressed: (){},
                   style: ElevatedButton.styleFrom(
                     primary: Colors.white,
                     fixedSize: Size(120, 120),
@@ -266,13 +266,4 @@ class pagina4 extends StatelessWidget {
     ),
     );
   }
-}
-void _pessoaSingular() {
-  //
-}
-void _pagina5(){
-  //
-}
-void _paginaAnterior(){
-  //
 }

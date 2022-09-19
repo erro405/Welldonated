@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:weeldonatedproject/app/pagina10.dart';
 import 'package:weeldonatedproject/app/pagina12.dart';
+
+import 'LowerAppBar.dart';
 
 class pagina17 extends StatelessWidget {
 
@@ -53,13 +56,14 @@ class pagina17 extends StatelessWidget {
                   height: 50,
                 ),
                 CircleAvatar(
-                  backgroundImage: AssetImage(''),
+                  backgroundImage: AssetImage('perfil.png'),
                   radius: 70,
                 ),
                 SizedBox(
                   height: 50,
                 ),
                 TextFormField(
+                  keyboardType: TextInputType.emailAddress,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     isDense: true,
@@ -100,6 +104,7 @@ class pagina17 extends StatelessWidget {
                   height: 30,
                 ),
                 TextFormField(
+                  keyboardType: TextInputType.phone,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     isDense: true,
@@ -137,7 +142,7 @@ class pagina17 extends StatelessWidget {
                   ),
                 ), //TELEMOVEL
                 SizedBox(
-                  height: 130,
+                  height: 100,
                 ),
                 ElevatedButton(
                   onPressed: (){
@@ -157,12 +162,26 @@ class pagina17 extends StatelessWidget {
                     fixedSize: Size(170, 50),
                   ),
                 ),
+                SizedBox(
+                  height: 60,
+                ),
               ],
             ),
           ),
         ),
       ),
-    );
+      bottomNavigationBar: Lowerappbar(),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFFFF9800),
+        child: Icon(
+          Icons.add,
+        ),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => pagina10()));
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+  );
   }
 }
 

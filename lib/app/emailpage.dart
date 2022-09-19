@@ -1,10 +1,18 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:weeldonatedproject/app/backgound.dart';
 import 'package:weeldonatedproject/app/emailpageform.dart';
+import 'package:weeldonatedproject/app/mainpage.dart';
+import 'package:weeldonatedproject/app/pagina2.dart';
 
 class EmailPage extends StatelessWidget {
+
+
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF283593),
@@ -14,12 +22,13 @@ class EmailPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-
                 Image.asset(
                   'ww.png',
                   fit: BoxFit.fill,
                 ),
-                SizedBox(width: 200,),
+                SizedBox(
+                  width: 200,
+                ),
                 Container(
                   child: TextButton(
                     style: ButtonStyle(),
@@ -30,14 +39,17 @@ class EmailPage extends StatelessWidget {
                         fontSize: 20,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
+                    },
                   ),
                 ),
-                SizedBox(width: 5,),
+                SizedBox(
+                  width: 5,
+                ),
               ],
             ),
           ),
-
         ],
       ),
       body: Center(
@@ -51,7 +63,41 @@ class EmailPage extends StatelessWidget {
             ),
             buildcard1(),
             _buildcontent(),
-            buildcard2(),
+            Container(
+              color: Colors.white,
+              width: 350,
+              child: Column(
+                children: [
+                  Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: 100,
+                      ),
+                      Text(
+                        'Ainda não têm conta?',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
+                      ),
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => pagina2()));
+                        },
+                        child: Text(
+                          'Registar',
+                          style: TextStyle(
+                            color: Colors.deepOrange,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Image.asset('www.png'),
+                ],
+              ),
+            ),
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weeldonatedproject/app/LowerAppBar.dart';
+import 'package:weeldonatedproject/app/pagina10.dart';
 
 class Editpage extends StatelessWidget {
   @override
@@ -39,7 +40,10 @@ class Editpage extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.orange,
-        onPressed: (){}, child: const Icon(Icons.add,
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => pagina10()));
+        },
+          child: const Icon(Icons.add,
       color: Colors.white,)
 
         ),

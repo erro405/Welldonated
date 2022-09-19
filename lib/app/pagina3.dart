@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weeldonatedproject/app/mainpage.dart';
 import 'package:weeldonatedproject/app/pagina2.dart';
 
 
@@ -60,7 +61,7 @@ class pagina3 extends StatelessWidget {
                 ),
                 ElevatedButton(
                   child: Image.asset('individual.png'),
-                  onPressed: _pessoaSingular,
+                  onPressed: (){},
                   style: ElevatedButton.styleFrom(
                     primary: Colors.white,
                     fixedSize: Size(120, 120),
@@ -165,7 +166,7 @@ class pagina3 extends StatelessWidget {
                   height: 30.0,
                 ),
                 TextFormField(
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.emailAddress,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     isDense: true,
@@ -344,7 +345,9 @@ class pagina3 extends StatelessWidget {
                   height: 20.0,
                 ),
                 ElevatedButton(
-                  onPressed: _registar,
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
+                  },
                   child: Text(
                     'Registar',
                     style: TextStyle(
@@ -370,14 +373,3 @@ class pagina3 extends StatelessWidget {
   }
 }
 
-void _paginaAnterior() {
-  //
-}
-
-void _pessoaSingular() {
-  //
-}
-
-void _registar() {
-  //
-}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weeldonatedproject/app/LowerAppBar.dart';
+import 'package:weeldonatedproject/app/pagina10.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -144,7 +145,9 @@ class MainPage extends StatelessWidget {
           child: Icon(
             Icons.add,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => pagina10()));
+          },
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
@@ -219,7 +222,7 @@ class MainPage extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     SizedBox(
-                      width: 4,
+                      width:4,
                     ),
                     Text(
                       'Descrição: cãozito Fixolas cãozito Fixolas',

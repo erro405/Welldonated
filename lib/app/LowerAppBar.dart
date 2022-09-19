@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:weeldonatedproject/app/emailpage.dart';
+import 'package:weeldonatedproject/app/pagina12.dart';
+
+import 'mainpage.dart';
 
 class Lowerappbar extends StatefulWidget {
   @override
@@ -27,13 +31,19 @@ class _LowerappbarState extends State<Lowerappbar> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           
-          IconButton(onPressed: (){},
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
+
+          },
               icon: Icon(Icons.home,
               color: Colors.orange,
               size: 30,),),
 
 
-          IconButton(onPressed: (){},
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => pagina12()));
+
+          },
             icon: Icon(Icons.account_circle,
               color: Colors.orange,
             size: 30,),),

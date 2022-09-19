@@ -1,12 +1,13 @@
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:weeldonatedproject/app/emailpage.dart';
+import 'package:weeldonatedproject/app/mainpage.dart';
 import 'package:weeldonatedproject/app/pagina3.dart';
 import 'package:weeldonatedproject/app/pagina4.dart';
 
 
 class pagina2 extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +29,9 @@ class pagina2 extends StatelessWidget {
               Icons.navigate_before_outlined,
               size: 40.0,
             ),
-            onPressed: _paginaAnterior,
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => EmailPage()));
+            },
           );
         }),
         elevation: 0.0,

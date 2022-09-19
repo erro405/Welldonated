@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:weeldonatedproject/app/mainpage.dart';
+
+import 'LowerAppBar.dart';
 
 class pagina10 extends StatefulWidget {
   CriarAnuncio createState() => CriarAnuncio();
@@ -37,7 +40,10 @@ class CriarAnuncio extends State<pagina10> {
                 Icons.close,
                 size: 35.0,
               ),
-              onPressed: _sair,
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MainPage()));
+              },
             );
           }),
         ],
@@ -72,7 +78,7 @@ class CriarAnuncio extends State<pagina10> {
                   height: 30,
                 ),
                 ElevatedButton(
-                  onPressed: _carregarImagem,
+                  onPressed: () {},
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -143,20 +149,22 @@ class CriarAnuncio extends State<pagina10> {
                 SizedBox(
                   height: 40.0,
                 ),
-                TextFormField(
+                Card(
+                  child: TextFormField(
+                    maxLines: 5,
                     cursorColor: Colors.white,
                     textAlignVertical: TextAlignVertical.top,
                     textAlign: TextAlign.left,
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.symmetric(
-                        vertical: 50,
+                        vertical: 10,
                         horizontal: 6,
                       ),
                       filled: true,
                       fillColor: Color(0xff3949ab),
                       hintText: "Descrição",
                       hintStyle: TextStyle(
-                        fontSize: 20.0,
+                        fontSize: 21.0,
                         fontFamily: 'Poppins',
                         color: Colors.white,
                       ),
@@ -180,7 +188,8 @@ class CriarAnuncio extends State<pagina10> {
                       fontSize: 20.0,
                       fontFamily: 'Poppins',
                     ),
-                  ), //descriçao
+                  ),
+                ), //descriçao
                 SizedBox(
                   height: 40.0,
                 ),
@@ -355,7 +364,7 @@ class CriarAnuncio extends State<pagina10> {
                   height: 30.0,
                 ),
                 ElevatedButton(
-                  onPressed: _carregarImagem,
+                  onPressed: () {},
                   child: Text(
                     'Publicar anúncio',
                     style: TextStyle(
@@ -371,21 +380,25 @@ class CriarAnuncio extends State<pagina10> {
                   ),
                 ),
                 SizedBox(
-                  height: 40.0,
+                  height: 60.0,
                 ),
               ],
             ),
           ),
         ),
       ),
+      bottomNavigationBar: Lowerappbar(),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFFFF9800),
+        child: Icon(
+          Icons.add,
+        ),
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => pagina10()));
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
-}
-
-void _carregarImagem() {
-  //
-}
-
-void _sair() {
-  //
 }

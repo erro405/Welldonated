@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:weeldonatedproject/app/AnuncioPage.dart';
+import 'package:weeldonatedproject/app/Editpage.dart';
+import 'package:weeldonatedproject/app/pagina10.dart';
 import 'package:weeldonatedproject/app/pagina17.dart';
+import 'LowerAppBar.dart';
+import 'emailpage.dart';
+import 'mainpage.dart';
+
+
+
 
 
 class pagina12 extends StatelessWidget {
@@ -14,7 +23,6 @@ class pagina12 extends StatelessWidget {
           TextButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => pagina17()));
-
             },
             child: Text(
               'Editar Perfil',
@@ -29,7 +37,7 @@ class pagina12 extends StatelessWidget {
           TextButton(
             onPressed: null,
             child: Text(
-              'blankkkkkkkkkkk',
+              'blankkkkkkkk',
               style: TextStyle(
                 color: Color(0xff1a237e),
               ),
@@ -38,7 +46,7 @@ class pagina12 extends StatelessWidget {
           TextButton(
             onPressed: null,
             child: Text(
-              'blankkkkkk',
+              'blankkkkkkk',
               style: TextStyle(
                 color: Color(0xff1a237e),
               ),
@@ -48,10 +56,12 @@ class pagina12 extends StatelessWidget {
             return IconButton(
               alignment: Alignment.centerRight,
               icon: const Icon(
-                Icons.close,
+                Icons.logout_rounded,
                 size: 35.0,
               ),
-              onPressed: _sair,
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => EmailPage()));
+              },
             );
           }),
         ],
@@ -86,7 +96,7 @@ class pagina12 extends StatelessWidget {
                   height: 17,
                 ),
                 CircleAvatar(
-                  backgroundImage: AssetImage(''),
+                  backgroundImage: AssetImage('perfil.png'),
                   radius: 70,
                 ),
                 SizedBox(
@@ -133,6 +143,7 @@ class pagina12 extends StatelessWidget {
                   height: 28,
                 ),
                 TextFormField(
+                  keyboardType: TextInputType.emailAddress,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     isDense: true,
@@ -173,6 +184,7 @@ class pagina12 extends StatelessWidget {
                   height: 28,
                 ),
                 TextFormField(
+                  keyboardType: TextInputType.phone,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     isDense: true,
@@ -210,10 +222,13 @@ class pagina12 extends StatelessWidget {
                   ),
                 ), //Telemovel
                 SizedBox(
-                  height: 98,
+                  height: 55,
                 ),
                 ElevatedButton(
-                  onPressed: _GerirAnuncios,
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Editpage()));
+
+                  },
                   child: Text(
                     'Gerir anúncios',
                     style: TextStyle(
@@ -228,19 +243,28 @@ class pagina12 extends StatelessWidget {
                     fixedSize: Size(180, 50),
                   ),
                 ),
+                SizedBox(
+                  height: 60,
+                ),
               ],
             ),
           ),
         ),
       ),
+      bottomNavigationBar: Lowerappbar(),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFFFF9800),
+        child: Icon(
+          Icons.add,
+        ),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => pagina10()));
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
 
-void _sair() {
-  //
-}
 
-void _GerirAnuncios() {
-  //
-}
+

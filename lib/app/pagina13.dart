@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:weeldonatedproject/app/pagina10.dart';
 import 'package:weeldonatedproject/app/pagina18.dart';
+
+import 'Editpage.dart';
+import 'LowerAppBar.dart';
+import 'mainpage.dart';
 
 
 class pagina13 extends StatelessWidget {
@@ -28,7 +33,7 @@ class pagina13 extends StatelessWidget {
           TextButton(
             onPressed: null,
             child: Text(
-              'blankkkkkkkkkkk',
+              'blankkkkkkk',
               style: TextStyle(
                 color: Color(0xff1a237e),
               ),
@@ -50,7 +55,9 @@ class pagina13 extends StatelessWidget {
                 Icons.close,
                 size: 35.0,
               ),
-              onPressed: _sair,
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
+              },
             );
           }),
         ],
@@ -85,7 +92,7 @@ class pagina13 extends StatelessWidget {
                   height: 17,
                 ),
                 CircleAvatar(
-                  backgroundImage: AssetImage(''),
+                  backgroundImage: AssetImage('bombeiros.png'),
                   radius: 65,
                 ),
                 SizedBox(
@@ -372,7 +379,9 @@ class pagina13 extends StatelessWidget {
                   height: 30,
                 ),
                 ElevatedButton(
-                  onPressed: _GerirAnuncios,
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Editpage()));
+                  },
                   child: Text(
                     'Gerir anúncios',
                     style: TextStyle(
@@ -388,21 +397,25 @@ class pagina13 extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 60,
                 ),
               ],
             ),
           ),
         ),
       ),
+      bottomNavigationBar: Lowerappbar(),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFFFF9800),
+        child: Icon(
+          Icons.add,
+        ),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => pagina10()));
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
 
-void _sair() {
-  //
-}
-
-void _GerirAnuncios(){
-  //
-}

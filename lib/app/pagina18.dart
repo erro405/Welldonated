@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:weeldonatedproject/app/pagina10.dart';
 import 'package:weeldonatedproject/app/pagina13.dart';
+
+import 'LowerAppBar.dart';
 
 class pagina18 extends StatelessWidget {
 
@@ -63,13 +66,14 @@ class pagina18 extends StatelessWidget {
                   height: 50,
                 ),
                 CircleAvatar(
-                  backgroundImage: AssetImage(''),
+                  backgroundImage: AssetImage('bombeiros.png'),
                   radius: 70,
                 ),
                 SizedBox(
                   height: 45,
                 ),
                 TextFormField(
+                  keyboardType: TextInputType.emailAddress,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     isDense: true,
@@ -110,6 +114,7 @@ class pagina18 extends StatelessWidget {
                   height: 30,
                 ),
                 TextFormField(
+                  keyboardType: TextInputType.phone,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     isDense: true,
@@ -150,6 +155,7 @@ class pagina18 extends StatelessWidget {
                   height: 30,
                 ),
                 TextFormField(
+                  keyboardType: TextInputType.streetAddress,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     isDense: true,
@@ -190,6 +196,7 @@ class pagina18 extends StatelessWidget {
                   height: 30,
                 ),
                 TextFormField(
+                  keyboardType: TextInputType.number,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     isDense: true,
@@ -310,7 +317,9 @@ class pagina18 extends StatelessWidget {
                   height: 55,
                 ),
                 ElevatedButton(
-                  onPressed: _Concluir,
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => pagina13()));
+                  },
                   child: Text(
                     'Concluir',
                     style: TextStyle(
@@ -333,14 +342,19 @@ class pagina18 extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: Lowerappbar(),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFFFF9800),
+        child: Icon(
+          Icons.add,
+        ),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => pagina10()));
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
 
-void _sair() {
-  //
-}
 
-void _Concluir() {
-  //
-}
