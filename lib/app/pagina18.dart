@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weeldonatedproject/app/pagina10.dart';
-import 'package:weeldonatedproject/app/pagina13.dart';
+import 'pagina13.dart';
 
 import 'LowerAppBar.dart';
 
@@ -12,15 +12,6 @@ class pagina18 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xff3949ab),
         actions: [
-          TextButton(
-            onPressed: null,
-            child: Text(
-              'blankkkkkk',
-              style: TextStyle(
-                color: Color(0xff3949ab),
-              ),
-            ),
-          ),
           Builder(builder: (BuildContext context) {
             return IconButton(
               alignment: Alignment.centerRight,

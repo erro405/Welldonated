@@ -207,32 +207,36 @@ class CriarAnuncio extends State<pagina10> {
                     color: Color(0xff3949ab),
                   ),
                   child: Theme(
-                    data: Theme.of(context)
-                        .copyWith(canvasColor: Color(0xff3949ab)),
-                    child: DropdownButton(
-                        underline: SizedBox(),
-                        isExpanded: true,
-                        value: dropdownvalue,
-                        icon: const Icon(Icons.keyboard_arrow_down),
-                        iconSize: 35,
-                        iconDisabledColor: Colors.white,
-                        iconEnabledColor: Colors.white,
-                        items: items.map((String items) {
-                          return DropdownMenuItem(
-                            value: items,
-                            child: Text(items),
-                          );
-                        }).toList(),
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontFamily: 'Poppins',
-                          color: Colors.white,
-                        ),
-                        onChanged: (String newValue) {
-                          setState(() {
-                            dropdownvalue = newValue;
-                          });
-                        }),
+                    data: Theme.of(context).copyWith(canvasColor: Color(0xff3949ab)),
+                    child: DropdownButtonHideUnderline(
+                      child: ButtonTheme(
+                        alignedDropdown: true,
+                        child: DropdownButton(
+                            underline: SizedBox(),
+                            isExpanded: true,
+                            value: dropdownvalue,
+                            icon: const Icon(Icons.keyboard_arrow_down),
+                            iconSize: 35,
+                            iconDisabledColor: Colors.white,
+                            iconEnabledColor: Colors.white,
+                            items: items.map((String items) {
+                              return DropdownMenuItem(
+                                value: items,
+                                child: Text(items),
+                              );
+                            }).toList(),
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontFamily: 'Poppins',
+                              color: Colors.white,
+                            ),
+                            onChanged: (String newValue) {
+                              setState(() {
+                                dropdownvalue = newValue;
+                              });
+                            }),
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(

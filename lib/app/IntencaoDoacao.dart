@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:weeldonatedproject/app/LowerAppBar.dart';
 
+import 'emailpage.dart';
+
+
+
 class IntencaoDoacao extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -18,15 +22,25 @@ class IntencaoDoacao extends StatelessWidget {
             ),
           ),
           backgroundColor: Colors.indigo,
-          title: Text('Intenção de Doação'),
+          title: Text('Intenção de Doação',
+            style: TextStyle(
+              fontFamily: 'Segoi UI',
+              fontSize: 23,
+            ),),
           actions: [
-            Icon(
-              Icons.close,
-            ),
-            Icon(
-              Icons.close,
-              color: Colors.indigo,
-            ),
+            Builder(builder: (BuildContext context) {
+              return IconButton(
+                alignment: Alignment.centerRight,
+                icon: const Icon(
+                  Icons.close,
+                  size: 35.0,
+                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => EmailPage()));
+                },
+              );
+            }),
           ],
         ),
         body: Center(

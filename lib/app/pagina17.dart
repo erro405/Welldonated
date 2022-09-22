@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weeldonatedproject/app/pagina10.dart';
-import 'package:weeldonatedproject/app/pagina12.dart';
+import 'pagina12.dart';
 
 import 'LowerAppBar.dart';
 

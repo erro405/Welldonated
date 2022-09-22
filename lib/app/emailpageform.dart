@@ -160,7 +160,6 @@ class _EmailPageFormState extends State<EmailPageForm> {
         height: 8,
       ),
 
-
     ];
   }
 
