@@ -9,7 +9,10 @@ class ButaoSubmit extends butoes {
 }) : super(
     child: Text(
       text,
-      style: TextStyle(color: Colors.white, fontSize: 20,),
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+      ),
     ),
     height: 44,
     color: Colors.deepOrange,

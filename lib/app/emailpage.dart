@@ -80,7 +80,7 @@ class EmailPage extends StatelessWidget {
                           fontSize: 15,
                         ),
                       ),
-                      FlatButton(
+                      TextButton(
                         onPressed: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => pagina2()));
                         },
@@ -157,7 +157,7 @@ class EmailPage extends StatelessWidget {
                     fontSize: 15,
                   ),
                 ),
-                FlatButton(
+                TextButton(
                   onPressed: () {},
                   child: Text(
                     'Registar',

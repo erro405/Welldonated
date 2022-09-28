@@ -34,7 +34,7 @@ class pagina17 extends StatelessWidget {
             preferredSize: Size.fromHeight(5.0)),
         elevation: 0.0,
         title: Text(
-          'Bruno Silva',
+          'Editar Perfil',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Segoi UI',

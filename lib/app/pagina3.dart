@@ -94,7 +94,7 @@ class pagina3 extends StatelessWidget {
                     ),
                     filled: true,
                     fillColor: Color(0xff1a237e),
-                    hintText: "Nome",
+                    hintText: "Nome completo",
                     hintStyle: TextStyle(
                       fontSize: 20.0,
                       fontFamily: 'Poppins',
@@ -135,48 +135,7 @@ class pagina3 extends StatelessWidget {
                     ),
                     filled: true,
                     fillColor: Color(0xff1a237e),
-                    hintText: "Sobrenome",
-                    hintStyle: TextStyle(
-                      fontSize: 20.0,
-                      fontFamily: 'Poppins',
-                      color: Colors.white70,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.white70,
-                        width: 1.3,
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.white70,
-                        width: 1.3,
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                    ),
-                  ),
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.0,
-                    fontFamily: 'Poppins',
-                  ),
-                ), //SOBRENOME
-                SizedBox(
-                  height: 30.0,
-                ),
-                TextFormField(
-                  keyboardType: TextInputType.emailAddress,
-                  cursorColor: Colors.white,
-                  decoration: InputDecoration(
-                    isDense: true,
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 8,
-                      horizontal: 6,
-                    ),
-                    filled: true,
-                    fillColor: Color(0xff1a237e),
-                    hintText: "Email",
+                    hintText: "E-mail",
                     hintStyle: TextStyle(
                       fontSize: 20.0,
                       fontFamily: 'Poppins',
@@ -327,10 +286,10 @@ class pagina3 extends StatelessWidget {
                   ),
                 ), //PASS
                 SizedBox(
-                  height: 30.0,
+                  height: 15.0,
                 ),
                 Text(
-                  'Ao clicar em Registar, está a concordar com os Termos do Serviço e com a Política de Privacidade da Well Donated',
+                  'Ao clicar em registar, está a concordar com os Termos e Condições da Well Donated',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     wordSpacing: 1.0,

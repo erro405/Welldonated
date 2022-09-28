@@ -134,7 +134,7 @@ class _EmailPageFormState extends State<EmailPageForm> {
       SizedBox(
         height: 1,
       ),
-      FlatButton(
+      TextButton(
         child: Text(
           'Esqueceu-se da password?',
           textAlign: TextAlign.left,
@@ -152,7 +152,7 @@ class _EmailPageFormState extends State<EmailPageForm> {
           print(user);
           if(user != null){
             Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context)=> MainPage()));
-        }
+          }
         },
         //submitEnabel ? _submit : null,
       ),

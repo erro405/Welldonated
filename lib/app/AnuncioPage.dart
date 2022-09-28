@@ -156,7 +156,7 @@ class AnuncioPage extends StatelessWidget {
                 SizedBox(
                   width: 10,
                 ),
-                FlatButton(
+                TextButton(
                   onPressed: () {},
                   child: Text(
                     'DOAR',
@@ -166,7 +166,9 @@ class AnuncioPage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  color: Colors.orange,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                  ),
                 ),
               ],
             ),
@@ -221,18 +223,22 @@ class AnuncioPage extends StatelessWidget {
                     SizedBox(
                       width: 10,
                     ),
-                    FlatButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Mais Informações',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
+                    SizedBox(
+                      height: 30,
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Mais Informações',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.orange,
                         ),
                       ),
-                      color: Colors.orange,
-                      height: 30,
                     ),
                   ],
                 ),

@@ -112,7 +112,7 @@ class Editpage extends StatelessWidget {
                   SizedBox(
                     width: 4,
                   ),
-                  FlatButton(
+                  TextButton(
                     onPressed: () {},
                     child: Text(
                       'Editar',
@@ -121,12 +121,14 @@ class Editpage extends StatelessWidget {
                         fontSize: 18,
                       ),
                     ),
-                    color: Colors.orange,
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                    ),
                   ),
                   SizedBox(
                     width: 10,
                   ),
-                  FlatButton(
+                  TextButton(
                     onPressed: () {},
                     child: Text(
                       'Eliminar',
@@ -135,7 +137,9 @@ class Editpage extends StatelessWidget {
                         fontSize: 18,
                       ),
                     ),
-                    color: Colors.orange,
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                    ),
                   ),
                 ],
               ),
@@ -204,7 +208,7 @@ class Editpage extends StatelessWidget {
                 SizedBox(
                   width: 4,
                 ),
-                FlatButton(
+                TextButton(
                   onPressed: () {},
                   child: Text(
                     'Editar',
@@ -213,12 +217,14 @@ class Editpage extends StatelessWidget {
                       fontSize: 18,
                     ),
                   ),
-                  color: Colors.orange,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                  ),
                 ),
                 SizedBox(
                   width: 10,
                 ),
-                FlatButton(
+                TextButton(
                   onPressed: () {},
                   child: Text(
                     'Eliminar',
@@ -227,7 +233,9 @@ class Editpage extends StatelessWidget {
                       fontSize: 18,
                     ),
                   ),
-                  color: Colors.orange,
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                  ),
                 ),
               ],
             ),

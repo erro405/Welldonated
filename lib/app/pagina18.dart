@@ -21,7 +21,6 @@ class pagina18 extends StatelessWidget {
               ),
               onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => pagina13()));
-
               },
             );
           }),
@@ -34,7 +33,7 @@ class pagina18 extends StatelessWidget {
             preferredSize: Size.fromHeight(10.0)),
         elevation: 0.0,
         title: Text(
-          'Bombeiros Voluntários da Póvoa de Lanhoso',
+          'Editar Perfil',
           textAlign: TextAlign.justify,
           maxLines: 3,
           style: TextStyle(

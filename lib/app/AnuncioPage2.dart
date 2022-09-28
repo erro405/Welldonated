@@ -185,18 +185,22 @@ class AnuncioPage2 extends StatelessWidget {
                 SizedBox(
                   width: 10,
                 ),
-                FlatButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Mais Informações',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 13,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  color: Colors.orange,
+                SizedBox(
                   height: 30,
+                  child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Mais Informações',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.orange,
+                      ),
+                  ),
                 ),
               ],
             ),

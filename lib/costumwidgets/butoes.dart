@@ -19,13 +19,16 @@ class butoes extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: height,
-      child:RaisedButton(
+      child:ElevatedButton(
         child: child,
-        color: color,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(borderRadius),
-            )),
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(borderRadius),
+            ),
+          ),
+          backgroundColor: MaterialStateProperty.all(color),
+        ),
         onPressed: onPressed,
       ),
     );
