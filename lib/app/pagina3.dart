@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:weeldonatedproject/app/AuthemricationServices.dart';
 import 'package:weeldonatedproject/app/mainpage.dart';
 import 'package:weeldonatedproject/app/pagina2.dart';
 
 
 class pagina3 extends StatelessWidget {
 
+
+  final AuthenticationService _auth = AuthenticationService();
+
+  final _key = GlobalKey<FormState>();
+  TextEditingController _nameController = TextEditingController();
+  TextEditingController _emailContoller = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -85,6 +93,7 @@ class pagina3 extends StatelessWidget {
                   height: 40.0,
                 ),
                 TextFormField(
+                  controller: _nameController,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     isDense: true,
@@ -125,6 +134,7 @@ class pagina3 extends StatelessWidget {
                   height: 30.0,
                 ),
                 TextFormField(
+                  controller: _emailContoller,
                   keyboardType: TextInputType.emailAddress,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
@@ -207,6 +217,7 @@ class pagina3 extends StatelessWidget {
                   height: 30.0,
                 ),
                 TextFormField(
+                  controller: _passwordController,
                   obscureText: true,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
@@ -305,6 +316,7 @@ class pagina3 extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: (){
+                    createUser();
                     Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   child: Text(
@@ -329,6 +341,19 @@ class pagina3 extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void createUser()async{
+    dynamic result = await _auth.createNewUser(
+    _emailContoller.text , _passwordController.text ) ;
+    if (result==null) {
+    print('Email não é valido') ;
+    } else {
+    print(result.toString() ) ;
+    _nameController.clear();
+    _emailContoller.clear();
+    _passwordController.clear();
+    }
   }
 }
 
