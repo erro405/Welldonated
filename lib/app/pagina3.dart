@@ -1,12 +1,19 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:weeldonatedproject/app/AuthemricationServices.dart';
 import 'package:weeldonatedproject/app/mainpage.dart';
 import 'package:weeldonatedproject/app/pagina2.dart';
-final Uri _url = Uri.parse('https://epicje.pt/');
+
 
 class pagina3 extends StatelessWidget {
-  final formGlobalKey = GlobalKey < FormState > ();
+
+
+  final AuthenticationService _auth = AuthenticationService();
+
+  final _key = GlobalKey<FormState>();
+  TextEditingController _nameController = TextEditingController();
+  TextEditingController _emailContoller = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,9 +28,8 @@ class pagina3 extends StatelessWidget {
               Icons.navigate_before_outlined,
               size: 40.0,
             ),
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => pagina2()));
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => pagina2()));
             },
           );
         }),
@@ -63,11 +69,11 @@ class pagina3 extends StatelessWidget {
                 ),
                 ElevatedButton(
                   child: Image.asset('individual.png'),
-                  onPressed: () {},
+                  onPressed: (){},
                   style: ElevatedButton.styleFrom(
                     primary: Colors.white,
                     fixedSize: Size(120, 120),
-                    shape: CircleBorder(),
+                    shape:  CircleBorder(),
                   ),
                 ),
                 SizedBox(
@@ -87,6 +93,7 @@ class pagina3 extends StatelessWidget {
                   height: 40.0,
                 ),
                 TextFormField(
+                  controller: _nameController,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                     isDense: true,
@@ -127,6 +134,7 @@ class pagina3 extends StatelessWidget {
                   height: 30.0,
                 ),
                 TextFormField(
+                  controller: _emailContoller,
                   keyboardType: TextInputType.emailAddress,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
@@ -209,6 +217,7 @@ class pagina3 extends StatelessWidget {
                   height: 30.0,
                 ),
                 TextFormField(
+                  controller: _passwordController,
                   obscureText: true,
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
@@ -290,52 +299,25 @@ class pagina3 extends StatelessWidget {
                 SizedBox(
                   height: 15.0,
                 ),
-                RichText(
+                Text(
+                  'Ao clicar em registar, está a concordar com os Termos e Condições da Well Donated',
                   textAlign: TextAlign.center,
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'Ao clicar em registar, está a concordar com os ',
-                        style: TextStyle(
-                          wordSpacing: 1.0,
-                          letterSpacing: 0.5,
-                          fontFamily: 'Poppins',
-                          color: Colors.white,
-                          fontSize: 14.0,
-                        ),
-                      ),
-                      TextSpan(
-                        text: 'Termos e Condições',
-                        style: TextStyle(
-                          wordSpacing: 1.0,
-                          letterSpacing: 0.5,
-                          fontFamily: 'Poppins',
-                          color: Colors.blue,
-                          fontSize: 14.0,
-                        ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = _launchUrl,
-                      ),
-                      TextSpan(
-                        text: ' do Well Donated',
-                        style: TextStyle(
-                          wordSpacing: 1.0,
-                          letterSpacing: 0.5,
-                          fontFamily: 'Poppins',
-                          color: Colors.white,
-                          fontSize: 14.0,
-                        ),
-                      ),
-                    ],
+                  style: TextStyle(
+                    wordSpacing: 1.0,
+                    letterSpacing: 0.5,
+                    fontFamily: 'Poppins',
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white70,
                   ),
                 ),
                 SizedBox(
                   height: 20.0,
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MainPage()));
+                  onPressed: (){
+                    createUser();
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   child: Text(
                     'Registar',
@@ -360,10 +342,18 @@ class pagina3 extends StatelessWidget {
       ),
     );
   }
-}
 
-Future<void> _launchUrl()  async{
-  if (!await launchUrl(_url)) {
-    throw 'Could not launch $_url';
+  void createUser()async{
+    dynamic result = await _auth.createNewUser(
+    _emailContoller.text , _passwordController.text ) ;
+    if (result==null) {
+    print('Email não é valido') ;
+    } else {
+    print(result.toString() ) ;
+    _nameController.clear();
+    _emailContoller.clear();
+    _passwordController.clear();
+    }
   }
 }
+
