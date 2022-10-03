@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io' show Platform;
-
 import 'package:weeldonatedproject/app/pagina4.dart';
-
 import 'mainpage.dart';
 
 class pagina5 extends StatefulWidget {
@@ -11,7 +9,7 @@ class pagina5 extends StatefulWidget {
 }
 
 class RegistarInst extends State<pagina5> {
-  dynamic dropdownvalue = 'Selecione a Categoria';
+  String dropdownvalue = 'Selecione a Categoria';
   final items = [
     'Selecione a Categoria',
     'Animal',
@@ -388,7 +386,7 @@ class RegistarInst extends State<pagina5> {
                           borderRadius: BorderRadius.all(
                             Radius.circular(5.0),
                           ),
-                          color: Color(0xff3949ab),
+                          color: Color(0xff1a237e),
                         ),
                         padding:
                         EdgeInsets.symmetric(horizontal: 1, vertical: 1),

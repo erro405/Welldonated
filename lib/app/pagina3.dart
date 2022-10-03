@@ -1,11 +1,12 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:weeldonatedproject/app/mainpage.dart';
 import 'package:weeldonatedproject/app/pagina2.dart';
-
+final Uri _url = Uri.parse('https://epicje.pt/');
 
 class pagina3 extends StatelessWidget {
-
-
+  final formGlobalKey = GlobalKey < FormState > ();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,8 +21,9 @@ class pagina3 extends StatelessWidget {
               Icons.navigate_before_outlined,
               size: 40.0,
             ),
-            onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => pagina2()));
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => pagina2()));
             },
           );
         }),
@@ -61,11 +63,11 @@ class pagina3 extends StatelessWidget {
                 ),
                 ElevatedButton(
                   child: Image.asset('individual.png'),
-                  onPressed: (){},
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     primary: Colors.white,
                     fixedSize: Size(120, 120),
-                    shape:  CircleBorder(),
+                    shape: CircleBorder(),
                   ),
                 ),
                 SizedBox(
@@ -288,24 +290,52 @@ class pagina3 extends StatelessWidget {
                 SizedBox(
                   height: 15.0,
                 ),
-                Text(
-                  'Ao clicar em registar, está a concordar com os Termos e Condições da Well Donated',
+                RichText(
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    wordSpacing: 1.0,
-                    letterSpacing: 0.5,
-                    fontFamily: 'Poppins',
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white70,
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Ao clicar em registar, está a concordar com os ',
+                        style: TextStyle(
+                          wordSpacing: 1.0,
+                          letterSpacing: 0.5,
+                          fontFamily: 'Poppins',
+                          color: Colors.white,
+                          fontSize: 14.0,
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'Termos e Condições',
+                        style: TextStyle(
+                          wordSpacing: 1.0,
+                          letterSpacing: 0.5,
+                          fontFamily: 'Poppins',
+                          color: Colors.blue,
+                          fontSize: 14.0,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = _launchUrl,
+                      ),
+                      TextSpan(
+                        text: ' do Well Donated',
+                        style: TextStyle(
+                          wordSpacing: 1.0,
+                          letterSpacing: 0.5,
+                          fontFamily: 'Poppins',
+                          color: Colors.white,
+                          fontSize: 14.0,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(
                   height: 20.0,
                 ),
                 ElevatedButton(
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   child: Text(
                     'Registar',
@@ -332,3 +362,8 @@ class pagina3 extends StatelessWidget {
   }
 }
 
+Future<void> _launchUrl()  async{
+  if (!await launchUrl(_url)) {
+    throw 'Could not launch $_url';
+  }
+}
