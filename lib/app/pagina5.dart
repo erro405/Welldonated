@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'dart:io' show Platform;
 import 'package:weeldonatedproject/app/pagina4.dart';
 import 'mainpage.dart';
+import 'package:flutter/gestures.dart';
+import 'package:url_launcher/url_launcher.dart';
+final Uri _url = Uri.parse('https://epicje.pt/');
 
 class pagina5 extends StatefulWidget {
   RegistarInst createState() => RegistarInst();
@@ -10,6 +13,7 @@ class pagina5 extends StatefulWidget {
 
 class RegistarInst extends State<pagina5> {
   String dropdownvalue = 'Selecione a Categoria';
+  final formGlobalKey = GlobalKey < FormState > ();
   final items = [
     'Selecione a Categoria',
     'Animal',
@@ -53,14 +57,6 @@ class RegistarInst extends State<pagina5> {
               },
             );
           }),
-          title: Text(
-            'Voltar',
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              fontFamily: 'Segoi UI',
-              fontSize: 20,
-            ),
-          ),
         ),
         body: Stack(
           children: [
@@ -275,16 +271,43 @@ class RegistarInst extends State<pagina5> {
                       SizedBox(
                         height: 18.0,
                       ),
-                      Text(
-                        'Ao clicar em Registar, está a concordar com os Termos do Serviço e com a Política de Privacidade da Well Donated',
+                      RichText(
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          wordSpacing: 1.0,
-                          letterSpacing: 0.5,
-                          fontFamily: 'Poppins',
-                          fontSize: 12.0,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white70,
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: 'Ao clicar em registar, está a concordar com os ',
+                              style: TextStyle(
+                                wordSpacing: 1.0,
+                                letterSpacing: 0.5,
+                                fontFamily: 'Poppins',
+                                color: Colors.white,
+                                fontSize: 14.0,
+                              ),
+                            ),
+                            TextSpan(
+                              text: 'Termos e Condições',
+                              style: TextStyle(
+                                wordSpacing: 1.0,
+                                letterSpacing: 0.5,
+                                fontFamily: 'Poppins',
+                                color: Colors.blue,
+                                fontSize: 14.0,
+                              ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = _launchUrl,
+                            ),
+                            TextSpan(
+                              text: ' do Well Donated',
+                              style: TextStyle(
+                                wordSpacing: 1.0,
+                                letterSpacing: 0.5,
+                                fontFamily: 'Poppins',
+                                color: Colors.white,
+                                fontSize: 14.0,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(
@@ -627,4 +650,10 @@ class RegistarInst extends State<pagina5> {
       },
     ),
   );
+}
+
+Future<void> _launchUrl()  async{
+  if (!await launchUrl(_url)) {
+    throw 'Could not launch $_url';
+  }
 }

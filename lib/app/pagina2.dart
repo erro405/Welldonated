@@ -13,14 +13,6 @@ class pagina2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xff3949ab),
-        title: Text(
-          'Voltar',
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            fontFamily: 'Segoi UI',
-            fontSize: 20,
-          ),
-        ),
         leadingWidth: 25,
         leading: Builder(builder: (BuildContext context) {
           return IconButton(

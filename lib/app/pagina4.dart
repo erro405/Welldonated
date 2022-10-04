@@ -25,14 +25,6 @@ class pagina4 extends StatelessWidget {
             },
           );
         }),
-        title: Text(
-          'Voltar',
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            fontFamily: 'Segoi UI',
-            fontSize: 20,
-          ),
-        ),
       ),
       body:
       Stack(
