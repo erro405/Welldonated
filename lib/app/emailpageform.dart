@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:weeldonatedproject/app/emailValidator.dart';
+import 'package:weeldonatedproject/app/esquecerPass.dart';
 import 'package:weeldonatedproject/app/mainpage.dart';
 
 import '../costumwidgets/butaosubmit.dart';
@@ -143,7 +144,9 @@ class _EmailPageFormState extends State<EmailPageForm> {
             color: Colors.grey,
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => esquecerPass()));
+        },
       ),
       ButaoSubmit(
         text: primaryText,
