@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:weeldonatedproject/app/AnuncioPage.dart';
+import 'package:weeldonatedproject/app/AnuncioPage2.dart';
 import 'package:weeldonatedproject/app/LowerAppBar.dart';
 import 'package:weeldonatedproject/app/pagina10.dart';
 
@@ -133,7 +135,7 @@ class MainPage extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              buildcard2(),
+              buildcard2(context),
               buildcard3(),
               buildcard4(),
             ],
@@ -180,12 +182,17 @@ class MainPage extends StatelessWidget {
         ),
       );
 
-  Widget buildcard2() => Card(
+  Widget buildcard2(BuildContext context) => Card(
+
         color: Color(0xFF9FA8DA),
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
         ),
+      child: new InkWell(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => AnuncioPage()));
+        },
         child: Column(
           children: [
             Stack(
@@ -206,7 +213,7 @@ class MainPage extends StatelessWidget {
                       width: 4,
                     ),
                     Text(
-                      'Cãozito Fixolas',
+                      'Cão para adoção',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -225,7 +232,7 @@ class MainPage extends StatelessWidget {
                       width:4,
                     ),
                     Text(
-                      'Descrição: cãozito Fixolas cãozito Fixolas',
+                      'Descrição: Cão para adoção',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -247,7 +254,7 @@ class MainPage extends StatelessWidget {
                       width: 4,
                     ),
                     Text(
-                      'Quantidade: unico',
+                      'Quantidade: 1',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -262,7 +269,8 @@ class MainPage extends StatelessWidget {
             ),
           ],
         ),
-      );
+      ),
+  );
 
   Widget buildcard3() => Card(
         color: Color(0xFF9FA8DA),
@@ -290,7 +298,7 @@ class MainPage extends StatelessWidget {
                       width: 4,
                     ),
                     Text(
-                      'Cãozito Fixolas',
+                      'Cão para adoção',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -309,7 +317,7 @@ class MainPage extends StatelessWidget {
                       width: 4,
                     ),
                     Text(
-                      'Descrição: cãozito Fixolas cãozito Fixolas',
+                      'Descrição: Cão para adoção',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -331,7 +339,7 @@ class MainPage extends StatelessWidget {
                       width: 4,
                     ),
                     Text(
-                      'Quantidade: unico',
+                      'Quantidade: 1',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -374,7 +382,7 @@ class MainPage extends StatelessWidget {
                       width: 4,
                     ),
                     Text(
-                      'Cãozito Fixolas',
+                      'Cão para adoção',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -393,7 +401,7 @@ class MainPage extends StatelessWidget {
                       width: 4,
                     ),
                     Text(
-                      'Descrição: cãozito Fixolas cãozito Fixolas',
+                      'Descrição: Cão para adoção',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -415,7 +423,7 @@ class MainPage extends StatelessWidget {
                       width: 4,
                     ),
                     Text(
-                      'Quantidade: unico',
+                      'Quantidade: 1',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

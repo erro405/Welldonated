@@ -16,14 +16,6 @@ class AnuncioPage extends StatelessWidget {
           ),
         ),
         backgroundColor: Color(0xFF283593),
-        title: Text(
-          '           WELL DONATED',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 30,
-          ),
-        ),
       ),
       body: Center(
         child: ListView(
@@ -87,7 +79,7 @@ class AnuncioPage extends StatelessWidget {
                   width: 30,
                 ),
                 Text(
-                  'Coleira de Cão',
+                  'Cão para adoção',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 30,
@@ -104,7 +96,7 @@ class AnuncioPage extends StatelessWidget {
                   width: 30,
                 ),
                 Text(
-                  'Coleira de Cão',
+                  'Cão para adoção',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 15,
@@ -125,20 +117,16 @@ class AnuncioPage extends StatelessWidget {
             color: Colors.white,
           ),
           decoration: InputDecoration(
-            hintText: 'Pesquisar',
+            hintText: 'Quantidade a doar',
             hintStyle: TextStyle(
               color: Colors.white,
             ),
-            contentPadding: EdgeInsets.zero,
+            contentPadding: EdgeInsets.all(10.0),
             filled: true,
             fillColor: Colors.indigo,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.0),
               borderSide: BorderSide.none,
-            ),
-            prefixIcon: Icon(
-              Icons.search,
-              color: Colors.white,
             ),
           ),
         ),

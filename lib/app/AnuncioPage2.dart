@@ -17,7 +17,7 @@ class AnuncioPage2 extends StatelessWidget {
         ),
         backgroundColor: Color(0xFF283593),
         title: Text(
-          '           WELL DONATED',
+          'WELL DONATED',
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.white,
@@ -83,7 +83,7 @@ class AnuncioPage2 extends StatelessWidget {
               width: 30,
             ),
             Text(
-              'Cãozito fixe',
+              'Cão para adoção',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
@@ -100,7 +100,7 @@ class AnuncioPage2 extends StatelessWidget {
               width: 30,
             ),
             Text(
-              'Cãozito fixe',
+              'Cão para adoção',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 15,
@@ -201,6 +201,9 @@ class AnuncioPage2 extends StatelessWidget {
                         backgroundColor: Colors.orange,
                       ),
                   ),
+                ),
+                SizedBox(
+                  width: 10,
                 ),
               ],
             ),
